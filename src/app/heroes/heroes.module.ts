@@ -9,6 +9,8 @@ import { FindComponent } from './pages/find/find.component';
 import { HomeComponent } from './pages/home/home.component';
 import { HeroeComponent } from './pages/heroe/heroe.component';
 import { ListadoComponent } from './pages/listado/listado.component';
+import { MaterialModule } from '../material/material.module';
+import { SidenavComponent } from '../shared/sidenav/sidenav.component';
 
 
 
@@ -18,11 +20,13 @@ import { ListadoComponent } from './pages/listado/listado.component';
     FindComponent,
     HomeComponent,
     HeroeComponent,
-    ListadoComponent
+    ListadoComponent,
+    SidenavComponent
   ],
   imports: [
     CommonModule,
-    HeroesRoutingModule
+    HeroesRoutingModule,
+    MaterialModule
   ]
 })
 export class HeroesModule { }
