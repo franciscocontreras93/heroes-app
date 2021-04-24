@@ -15,7 +15,7 @@ interface NavbarItems {
 @Component({
   selector: 'app-heroes-home',
   templateUrl: './home.component.html',
-  styles: [
+  styleUrls: [ './home.component.css'
   ]
 })
 export class HomeComponent {
@@ -31,6 +31,11 @@ export class HomeComponent {
       name: 'Agregar Heroes',
       path: './add',
       icon: 'add'
+    },
+    {
+      name: 'Buscar Heroes',
+      path: './find',
+      icon: 'search'
     },
 ]
 

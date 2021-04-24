@@ -11,22 +11,30 @@ import { HeroeComponent } from './pages/heroe/heroe.component';
 import { ListadoComponent } from './pages/listado/listado.component';
 import { MaterialModule } from '../material/material.module';
 import { SidenavComponent } from '../shared/sidenav/sidenav.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
+import { ImageHeroePipe } from './pipes/image-heroe.pipe';
+
 
 
 
 @NgModule({
+
   declarations: [
     AddComponent,
     FindComponent,
     HomeComponent,
     HeroeComponent,
     ListadoComponent,
-    SidenavComponent
+    SidenavComponent,
+    HeroeTarjetaComponent,
+    ImageHeroePipe
   ],
   imports: [
     CommonModule,
     HeroesRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FlexLayoutModule
   ]
 })
 export class HeroesModule { }
