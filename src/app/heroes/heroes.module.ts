@@ -14,6 +14,7 @@ import { SidenavComponent } from '../shared/sidenav/sidenav.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { ImageHeroePipe } from './pipes/image-heroe.pipe';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -34,7 +35,8 @@ import { ImageHeroePipe } from './pipes/image-heroe.pipe';
     CommonModule,
     HeroesRoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
   ]
 })
 export class HeroesModule { }
