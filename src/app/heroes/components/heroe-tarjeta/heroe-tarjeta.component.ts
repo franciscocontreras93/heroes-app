@@ -6,12 +6,12 @@ import { Heroe } from '../../interfaces/heroes.interface';
   templateUrl: './heroe-tarjeta.component.html',
   styleUrls: ['./heroe-tarjeta.component.css']
 })
-export class HeroeTarjetaComponent  {
+export class HeroeTarjetaComponent {
 
 
   @Input() heroe!: Heroe;
 
 
-  
+
 
 }

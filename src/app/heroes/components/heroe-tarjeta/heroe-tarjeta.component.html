@@ -11,7 +11,16 @@
         <p><strong>Personajes:</strong> {{heroe.characters}}</p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-flat-button>Ver más...</button>
-        <button mat-flat-button>Editar</button>
+        <button
+        
+        mat-button 
+        color="info"
+        [routerLink]="['/heroes',heroe.id]">Ver más</button>
+        <button
+        
+        mat-button
+        color="warn"
+        [routerLink]="['/heroes/edit',heroe.id]"
+        >Editar</button>
       </mat-card-actions>
     </mat-card>

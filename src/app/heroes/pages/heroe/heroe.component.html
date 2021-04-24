@@ -1,1 +1,41 @@
-<p>heroe works!</p>
+<mat-grid-list cols="1" *ngIf="!heroe, else divHeroe">
+    <mat-grid-tile>
+        <mat-spinner ></mat-spinner>
+    </mat-grid-tile>
+</mat-grid-list>
+<ng-template #divHeroe >
+    <div fxLayout="row"
+        fxLayout.xs="col"
+        fxLayoutGap="30px"
+        >
+
+        <div fxFlex="20">
+                <h1>{{heroe.superhero}} - <small>{{heroe.alter_ego}}</small></h1>
+                <mat-divider></mat-divider>
+                <br>
+                <img [src]="heroe|imagen" style="max-height: 65vh; display: block; margin-left: auto; margin-right: auto; ">
+            </div>
+            
+            <div fxFlex="50">
+                
+                <h1>{{heroe.publisher}}</h1>
+                <mat-divider></mat-divider>
+                <br>
+
+                <mat-list>
+                    <mat-list-item>{{heroe.first_appearance}}</mat-list-item>
+                    <mat-list-item>{{heroe.characters}}</mat-list-item>
+                    <mat-list-item>{{heroe.publisher}}</mat-list-item>
+                    <mat-list-item>{{heroe.alter_ego}}</mat-list-item>
+
+                    <button mat-flat-button color="warn" (click)="back()"><mat-icon>arrow_back</mat-icon></button>
+                </mat-list>
+            
+        </div>
+
+    </div>
+
+</ng-template>
+
+
+
