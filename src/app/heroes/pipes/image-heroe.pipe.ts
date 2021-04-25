@@ -8,7 +8,10 @@ export class ImageHeroePipe implements PipeTransform {
   srcUrl: string = "assets/heroes/"
   transform(value: Heroe) {
 
-    return `assets/heroes/${value.id}.jpg`
+    if(!value.id && !value.alt_img) {return 'assets/no-image.png'} else if (value.alt_img) {return value.alt_img } else { return `assets/heroes/${value.id}.jpg`}
+    
+    
+
   }
 
 }

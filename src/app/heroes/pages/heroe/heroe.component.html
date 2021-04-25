@@ -13,7 +13,7 @@
                 <h1>{{heroe.superhero}} - <small>{{heroe.alter_ego}}</small></h1>
                 <mat-divider></mat-divider>
                 <br>
-                <img [src]="heroe|imagen" style="max-height: 65vh; display: block; margin-left: auto; margin-right: auto; ">
+                <img [src]="heroe|imagen" style="max-height: 65vh; max-width: 75%; display: block; margin-left: auto; margin-right: auto; ">
             </div>
             
             <div fxFlex="50">
@@ -29,6 +29,7 @@
                     <mat-list-item>{{heroe.alter_ego}}</mat-list-item>
 
                     <button mat-flat-button color="warn" (click)="back()"><mat-icon>arrow_back</mat-icon></button>
+                    <button mat-flat-button color="warn" (click)="delete()"><mat-icon>delete</mat-icon></button>
                 </mat-list>
             
         </div>

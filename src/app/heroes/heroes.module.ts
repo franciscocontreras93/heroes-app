@@ -15,6 +15,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.component';
 import { ImageHeroePipe } from './pipes/image-heroe.pipe';
 import { FormsModule } from '@angular/forms';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
+
+
 
 
 
@@ -29,7 +32,8 @@ import { FormsModule } from '@angular/forms';
     ListadoComponent,
     SidenavComponent,
     HeroeTarjetaComponent,
-    ImageHeroePipe
+    ImageHeroePipe,
+    SnackbarComponent
   ],
   imports: [
     CommonModule,

@@ -34,4 +34,10 @@ export class HeroeComponent implements OnInit {
     this.router.navigate(['/heroes/list'])
   }
 
+  delete() {
+    if (this.heroe.id) {
+      this.heroesService.deleteHero(this.heroe).subscribe(resp => this.router.navigate(['heroes/list']))
+    }
+  }
+
 }
