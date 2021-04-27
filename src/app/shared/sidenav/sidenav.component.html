@@ -24,7 +24,9 @@
     </button>
     <span>Heroes App</span>
     <span class="spacer"></span>
-    <button mat-icon-button>
+    <span>{{auth.usuario}}</span>
+    <button mat-icon-button
+            (click)="logout()">
       <mat-icon>logout</mat-icon>
     </button>
     

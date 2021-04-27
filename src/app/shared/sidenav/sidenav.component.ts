@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth/services/auth.service';
+import { Users } from '../../auth/interfaces/auth.interfaces';
 
 
 interface NavbarItems {
@@ -16,7 +19,19 @@ interface NavbarItems {
   ]
 })
 export class SidenavComponent {
+ 
+  
+  constructor(
+    private router:Router,
+    private AuthService:AuthService,
+  ){}
 
+  get auth() {
+    return this.AuthService.user;
+  }
+
+
+  
   sidenavItems: NavbarItems[] = [
     {
       name: 'Listado de Heroes',
@@ -34,5 +49,9 @@ export class SidenavComponent {
       icon: 'search'
     },
   ]
+
+  logout() {
+    this.router.navigate(['/auth/login'])
+  }
 
 }

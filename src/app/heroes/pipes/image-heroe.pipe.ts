@@ -8,7 +8,7 @@ export class ImageHeroePipe implements PipeTransform {
   srcUrl: string = "assets/heroes/"
   transform(value: Heroe) {
 
-    console.log('Imagen se Proceso')
+  
 
     if (!value.id && !value.alt_img) { 
       return 'assets/no-image.png' 

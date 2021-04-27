@@ -30,12 +30,13 @@ export class DeleteDialogComponent implements OnInit {
     if (this.data.id) {
 
       this.service.deleteHero(this.data).subscribe(resp => {
-        if (!this.listado) {
-          this.router.navigate(['/heroes/list']) 
+        if (this.listado) {
+          window.location.reload()
+          
           this.listado = true 
         }
         else {
-          window.location.reload()
+          this.router.navigate(['/heroes/list'])
         }
       });    
       this.dialogRef.close(true)
