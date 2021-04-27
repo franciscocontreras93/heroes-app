@@ -16,6 +16,7 @@ import { HeroeTarjetaComponent } from './components/heroe-tarjeta/heroe-tarjeta.
 import { ImageHeroePipe } from './pipes/image-heroe.pipe';
 import { FormsModule } from '@angular/forms';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { DeleteDialogComponent } from './components/delete-dialog/delete-dialog.component';
 
 
 
@@ -33,7 +34,8 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
     SidenavComponent,
     HeroeTarjetaComponent,
     ImageHeroePipe,
-    SnackbarComponent
+    SnackbarComponent,
+    DeleteDialogComponent
   ],
   imports: [
     CommonModule,

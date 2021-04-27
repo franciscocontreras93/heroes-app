@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { SnackbarComponent } from '../../components/snackbar/snackbar.component';
-
 import { Heroe, Publisher } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/service.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteDialogComponent } from '../../components/delete-dialog/delete-dialog.component';
 
 
 
@@ -46,6 +47,8 @@ export class AddComponent implements OnInit {
   constructor(
     private HeroesService:HeroesService,
     private ActivatedRoute: ActivatedRoute,
+    private snackBar: MatSnackBar,
+    private dialog:MatDialog,
     private router:Router
     ) { }
 
@@ -68,36 +71,33 @@ export class AddComponent implements OnInit {
     
 
   }
-
-
   save() {
-    
     if(this.heroe.superhero.trim().length === 0) {
       return;
     }
     
     if(this.heroe.id ) {
       this.HeroesService.editHero(this.heroe).subscribe(resp => {
+        this.mostrarSnackbar(`Editado Correctamente: ${resp.superhero}`)
         this.router.navigate(['/heroes', resp.id])
-        alert(`Modificado ${resp.id}`)
       })
       
     } else {
-      
-      this.HeroesService.addHeroe(this.heroe).subscribe(resp => {
+        this.HeroesService.addHeroe(this.heroe).subscribe(resp => {
+        this.mostrarSnackbar(`Agregado Correctamente: ${resp.superhero}`)
         this.router.navigate(['/heroes',resp.id])
         
       })
     }
-
-
-    
-    
   }
-
   delete() {
-    if ( this.heroe.id) {
-      this.HeroesService.deleteHero(this.heroe).subscribe(resp => this.router.navigate(['heroes/list']))
-    }
+    this.dialog.open(DeleteDialogComponent, {
+      data: this.heroe
+    })
+  }
+  mostrarSnackbar(mensaje:string){
+    this.snackBar.open(mensaje,'Cerrar', {
+      duration: 5000      
+    })
   }
 }

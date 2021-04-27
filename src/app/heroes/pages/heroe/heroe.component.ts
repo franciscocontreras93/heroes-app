@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { Heroe } from '../../interfaces/heroes.interface';
 import { HeroesService } from '../../services/service.service';
+import { DeleteDialogComponent } from '../../components/delete-dialog/delete-dialog.component';
 
 @Component({
   selector: 'app-heroe',
@@ -17,6 +19,7 @@ export class HeroeComponent implements OnInit {
   constructor(
     private activateRoute:ActivatedRoute,
     private heroesService: HeroesService,
+    private dialog:MatDialog,
     private router:Router,
     ) { }
 
@@ -35,9 +38,8 @@ export class HeroeComponent implements OnInit {
   }
 
   delete() {
-    if (this.heroe.id) {
-      this.heroesService.deleteHero(this.heroe).subscribe(resp => this.router.navigate(['heroes/list']))
-    }
+    this.dialog.open(DeleteDialogComponent, {
+      data:this.heroe })
   }
 
 }
