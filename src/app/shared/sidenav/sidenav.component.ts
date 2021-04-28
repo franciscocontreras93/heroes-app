@@ -51,7 +51,7 @@ export class SidenavComponent {
   ]
 
   logout() {
-    this.router.navigate(['/auth/login'])
+    this.AuthService.logout()
   }
 
 }
